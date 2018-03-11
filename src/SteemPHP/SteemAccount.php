@@ -159,7 +159,7 @@ class SteemAccount
 		try {
 			$this->accountDetails = $this->getAccount($account);
 			$this->Props = $this->getProps();
-			return SteemHelper::vestToSteem($this->accountDetails[0]['vesting_shares'], $this->Props['total_vesting_shares'], $this->Props['total_vesting_fund_steem']);
+			return SteemHelper::vestToSteem($this->accountDetails[0]['vesting_shares'], $this->Props['total_vesting_fund_steem'], $this->Props['total_vesting_shares']);
 		} catch (\Exception $e) {
 			return SteemHelper::handleError($e);
 		}
